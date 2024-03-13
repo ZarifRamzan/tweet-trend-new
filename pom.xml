@@ -30,13 +30,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->
 		<dependency>
 		    <groupId>org.kohsuke</groupId>
 		    <artifactId>github-api</artifactId>
 		    <version>1.99</version>
 		</dependency>
-		 <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core -->
 		<dependency>
 		    <groupId>org.twitter4j</groupId>
 		    <artifactId>twitter4j-core</artifactId>
@@ -76,12 +74,14 @@
 		</dependency>
 	</dependencies>
 
-	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.example.MainClass</mainClass> <!-- Replace com.example.MainClass with the fully qualified name of your main class -->
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -91,7 +91,6 @@
 					<argLine>${argLine} -Xmx2048m</argLine>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -102,7 +101,6 @@
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
-					<!-- attached to Maven test phase -->
 					<execution>
 						<id>report</id>
 						<phase>test</phase>
@@ -118,9 +116,8 @@
 	<distributionManagement>
 		<repository>
 			<id>dev</id>
-			<url>file://jarstaging</url>
+			<url>file:///path/to/your/repository</url> <!-- Replace this URL with the actual URL of your repository -->
 		</repository>
 	</distributionManagement>
-
 
 </project>
