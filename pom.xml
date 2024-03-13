@@ -14,7 +14,7 @@
     
     <!-- Dependencies -->
     <dependencies>
-        <!-- Example dependency -->
+        <!-- Example dependency (you can add more dependencies here) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -33,6 +33,19 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <!-- Maven JAR plugin (to package the project as a JAR file) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.MainClass</mainClass> <!-- Specify the main class of your application -->
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
