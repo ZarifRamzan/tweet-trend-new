@@ -5,9 +5,9 @@ pipeline {
         }
     }
     stages {
-        stage("build") {
+        stage("Clone code") {
             steps {
-                sh 'mvn clean deploy'
+                git branch: 'main', url: https://github.com/ZarifRamzan/tweet-trend-new.git
             }
         }
     }
